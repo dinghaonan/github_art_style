@@ -49,10 +49,10 @@ public class BaseDaoImpl<T> implements IBaseDao {
 		int i = 0;
 		while (iterator.hasNext()) {
 			if (0 == i) {
-				sb.append(" where ");
+				sb.append(" where 1=1");
 			}
 			final Entry<String, Object> next = iterator.next();
-			sb.append(" " + next.getKey() + " = " + next.getValue());
+			sb.append(" and " + next.getKey() + " = " + next.getValue());
 			i++;
 		}
 		System.out.println(sb.toString());
